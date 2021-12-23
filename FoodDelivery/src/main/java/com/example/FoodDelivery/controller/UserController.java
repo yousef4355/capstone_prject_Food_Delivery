@@ -3,14 +3,13 @@ package com.example.FoodDelivery.controller;
 import com.example.FoodDelivery.model.entities.User;
 import com.example.FoodDelivery.model.services.UserServise;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@RequestMapping (path = "api/user")
+@RequestMapping (path = "api/user")
 public class UserController {
     private UserServise userService;
 

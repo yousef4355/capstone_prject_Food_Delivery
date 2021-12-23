@@ -23,7 +23,7 @@ function handleSubmit(event){
     event.preventDefault();
     axios({
         method:"post",
-        url:"add",
+        url:"/api/user/add",
         data:newUser
     })
 }

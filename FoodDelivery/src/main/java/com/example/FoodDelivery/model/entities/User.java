@@ -1,6 +1,10 @@
 package com.example.FoodDelivery.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -11,7 +15,9 @@ public class User {
 
     private String name;
     private String email;
-
+    @OneToMany(mappedBy = "User")
+    @JsonIgnore
+    private List<User> items = new ArrayList<>();
     public User(int id, String name, String email) {
         this.id = id;
         this.name = name;

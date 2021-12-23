@@ -1,6 +1,6 @@
 package com.example.FoodDelivery.controller;
 
-import com.example.FoodDelivery.model.entities.Order;
+import com.example.FoodDelivery.model.entities.Orders;
 import com.example.FoodDelivery.model.services.OrderServise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
+@RequestMapping (path = "api/orders")
 public class OrderController {
     private OrderServise orderService;
 
@@ -16,19 +18,19 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping(path="OrderController")
-    public List<Order> getOrders() {
+    @GetMapping
+    public List<Orders> getOrders() {
 
         return orderService.getOrder();
     }
 
     @GetMapping(path = "{orderId}")
-    public Optional<Order> getOrder(@PathVariable(name = "orderId") Integer orderId) {
+    public Optional<Orders> getOrder(@PathVariable(name = "orderId") Integer orderId) {
         return orderService.getOrder(orderId);
     }
 
     @PostMapping("add")
-    public void registerNewOrder(@RequestBody Order order){
+    public void registerNewOrder(@RequestBody Orders order){
         orderService.addNewOrder(order);
     }
 

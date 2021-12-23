@@ -11,12 +11,14 @@ import Location from "./routes/location";
 import Driver from "./routes/driver";
 import Payment from "./routes/payment";
 import Login from "./routes/Login";
+import Order from "./routes/Order"
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="expenses" element={<Expenses />} />
         <Route path="login" element={<Login />} />
+        <Route path="Order" element={<Order />} />
         <Route path="invoices" element={<Invoices />}/> 
         <Route path="location" element={<Location />}/>
         <Route path="payment" element={<Payment />}/>
