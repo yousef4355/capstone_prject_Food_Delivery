@@ -4,12 +4,11 @@ import com.example.FoodDelivery.model.entities.User;
 import com.example.FoodDelivery.model.services.UserServise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping (path = "api/user")
+@RequestMapping (path = "api/users")
 public class UserController {
     private UserServise userService;
 
@@ -18,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(path="UserController")
+    @GetMapping
     public List<User> getUsers() {
 
         return userService.getUser();
@@ -29,7 +28,7 @@ public class UserController {
         return userService.getUser(userId);
     }
 
-    @PostMapping("add")
+    @PostMapping(path = "add")
     public void registerNewUser(@RequestBody User user){
         userService.addNewUser(user);
     }

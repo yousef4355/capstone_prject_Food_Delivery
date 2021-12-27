@@ -8,29 +8,33 @@ public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int ORDER_id;
      private String type;
      private String time;
      private  String location;
+
     @ManyToOne
-    @JoinColumn(name = "order_id",referencedColumnName="orderId")
-    private Orders order;
-    public Orders(int id, String type, String time, String location) {
-        this.id = id;
+    @JoinColumn(name = "userId",referencedColumnName="id")
+    private User user;
+
+    public Orders(int ORDER_id, String type, String time, String location, User user) {
+        this.ORDER_id = ORDER_id;
         this.type = type;
         this.time = time;
         this.location = location;
+        this.user = user;
     }
 
     public Orders() {
     }
 
-    public int getId() {
-        return id;
+
+    public int getORDER_id() {
+        return ORDER_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setORDER_id(int ORDER_id) {
+        this.ORDER_id = ORDER_id;
     }
 
     public String getType() {

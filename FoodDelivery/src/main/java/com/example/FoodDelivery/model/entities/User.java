@@ -9,19 +9,25 @@ import java.util.List;
 @Entity
 @Table
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
     private String email;
-    @OneToMany(mappedBy = "User")
+
+    @OneToMany(mappedBy ="user")
     @JsonIgnore
-    private List<User> items = new ArrayList<>();
+    private List<Orders> items = new ArrayList<>();
+
+
     public User(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
+
+
     }
 
     public User() {

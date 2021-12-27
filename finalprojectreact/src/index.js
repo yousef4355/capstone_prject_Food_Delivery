@@ -19,7 +19,9 @@ ReactDOM.render(
         <Route path="expenses" element={<Expenses />} />
         <Route path="login" element={<Login />} />
         <Route path="Order" element={<Order />} />
-        <Route path="invoices" element={<Invoices />}/> 
+        <Route path="invoices" element={<Invoices />}> 
+        <Route path=":invoiceId" element={<Invoice />} />
+        `</Route>
         <Route path="location" element={<Location />}/>
         <Route path="payment" element={<Payment />}/>
           <Route path="driver" element={<Driver/>}>
@@ -31,7 +33,7 @@ ReactDOM.render(
           </main>
         }
       />
-          <Route path=":invoiceId" element={<Invoice />} />
+        
         </Route>
         <Route
           path="*"

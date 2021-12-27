@@ -16,21 +16,21 @@ function handleEmail(event){
     setEmail((email = event.target.value))
 }
 
-let newUser = {"name": name, "email":email}
+let newUser = {"name": name, "email" :email}
 
 
 function handleSubmit(event){
     event.preventDefault();
     axios({
         method:"post",
-        url:"/api/user/add",
+        url:"api/users/add",
         data:newUser
     })
 }
 function handleDelete() {
     axios({
         method: "delete",
-        url: "delete/100"
+        url: "delete/10"
     });
   }
     return (
@@ -39,19 +39,19 @@ function handleDelete() {
     <input
      type="text"
      value={name}
-     name="firstName"
+     name="name"
      placeholder="First Name"
      onChange={handleName}
     />
       <input
      type="text"
      value={email}
-     name="Email"
+     name="email"
      placeholder="email"
      onChange={handleEmail}
     />
     <input type="submit" value="submit"/>
-    <button onClick={handleDelete}>delete customer</button>
+    {/* <button onClick={handleDelete}>delete customer</button> */}
     </form>
       
         </div>
