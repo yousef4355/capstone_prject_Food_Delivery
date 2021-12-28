@@ -12,6 +12,9 @@ import Driver from "./routes/driver";
 import Payment from "./routes/payment";
 import Login from "./routes/Login";
 import Order from "./routes/Order"
+import Restauants from "./routes/Restauants";
+import Menu from "./routes/Menu";
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
@@ -19,9 +22,12 @@ ReactDOM.render(
         <Route path="expenses" element={<Expenses />} />
         <Route path="login" element={<Login />} />
         <Route path="Order" element={<Order />} />
+        <Route path="menu" element={<Menu />} />
         <Route path="invoices" element={<Invoices />}> 
         <Route path=":invoiceId" element={<Invoice />} />
         `</Route>
+        
+        <Route path="Restauants" element={<Restauants />}/>
         <Route path="location" element={<Location />}/>
         <Route path="payment" element={<Payment />}/>
           <Route path="driver" element={<Driver/>}>

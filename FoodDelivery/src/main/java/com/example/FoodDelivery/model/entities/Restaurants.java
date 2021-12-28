@@ -1,6 +1,7 @@
 package com.example.FoodDelivery.model.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -16,7 +17,12 @@ public class Restaurants {
     }
 
     public Restaurants() {
+
+
     }
+
+
+
 
     public int getRestaurantsId() {
         return RestaurantsId;

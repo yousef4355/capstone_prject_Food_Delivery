@@ -4,12 +4,14 @@ import  React from 'react'
 
 let invoices = [
     {
+      id:1,
       name: "pizze",
       number: 1995,
       amount: "$10,800",
       due: "12/05/1995"
     },
     {
+      id:2,
       name: "barger",
       number: 2000,
       amount: "$8,000",

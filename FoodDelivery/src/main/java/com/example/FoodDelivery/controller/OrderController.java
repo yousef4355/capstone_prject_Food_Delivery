@@ -32,6 +32,7 @@ public class OrderController {
 
     @PostMapping("add")
     public void registerNewOrder(@RequestBody Orders order){
+
         orderService.addNewOrder(order);
     }
 
