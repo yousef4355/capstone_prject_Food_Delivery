@@ -1,14 +1,22 @@
 import  React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
 let invoices = [
+//   axios.get("/api/restauants")
+//   .then(response=>{
+//     console.log(response.data)
+//     setMyRestauants(response.data[1])
+//  }),
     {
       id:1,
       name: "pizze",
       number: 1995,
       amount: "$10,800",
-      due: "12/05/1995"
+      due: "12/05/1995",
+      
+     Link:<Link to="/payment" ><button>payment</button></Link>
     },
     {
       id:2,
@@ -17,7 +25,7 @@ let invoices = [
       amount: "$8,000",
       due: "10/31/2000"
     },
-    {
+    { 
       name: "showerama",
       number: 2003,
       amount: "$9,500",

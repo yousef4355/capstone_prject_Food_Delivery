@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-
+import "./routes/barger.css"
  function App() {
   return (
     <div>
@@ -11,6 +11,7 @@ import { Outlet, Link } from "react-router-dom";
           paddingBottom: "1rem"
         }}
       >
+        <Link to="/Home">Home</Link>|{" "}
         <Link to="/invoices">قائمة الطعام</Link> |{" "}
         <Link to="/expenses">الدخول</Link> |{" "}
         <Link to="/menu">Menu</Link> |{" "}

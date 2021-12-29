@@ -14,7 +14,7 @@ export default function Invoice() {
         {invoice.name}: {invoice.number}
       </p>
       <p>Due Date: {invoice.due}</p>
-
+<p>{invoice.Link}</p>
 
       <form>
       <tr>

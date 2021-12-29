@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Expenses() {
     return (
      
@@ -11,7 +12,7 @@ export default function Expenses() {
           <label>
 fristName:
 </label>
-<input type="text"Name="name" />
+<input type="text"Name="name"  />
 <label>
 pasword:
 </label>
@@ -21,7 +22,7 @@ pasword:
 <input type="Submit" value="SignIn" />
 
 </form>
-      
+      <Link to="/login"><button>newUser</button></Link>
   </div>
     );
   }

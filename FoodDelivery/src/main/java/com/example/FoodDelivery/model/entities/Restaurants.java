@@ -10,6 +10,7 @@ public class Restaurants {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int RestaurantsId;
     private String name;
+    
 
     public Restaurants(int restaurantsId, String name) {
         RestaurantsId = restaurantsId;

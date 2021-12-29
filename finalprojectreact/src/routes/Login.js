@@ -6,7 +6,7 @@ export default function Login() {
 
 let [name,setName]=useState("")
 let [email,setEmail]=useState("")
-
+let[password,setPassword]=useState("")
 
 
 function handleName(event){
@@ -15,8 +15,11 @@ function handleName(event){
 function handleEmail(event){
     setEmail((email = event.target.value))
 }
+function handlePassword(event){
+    setPassword((password = event.target.value))
+}
 
-let newUser = {"name": name, "email" :email}
+let newUser = {"name": name, "email" :email ,"password":password}
 
 
 function handleSubmit(event){
@@ -50,6 +53,15 @@ function handleDelete() {
      placeholder="email"
      onChange={handleEmail}
     />
+    <input
+    type="text"
+    value={password}
+    name='pasword'
+    placeholder='password'
+    onChange={handlePassword}
+    />
+
+    value={}
     <input type="submit" value="submit"/>
     {/* <button onClick={handleDelete}>delete customer</button> */}
     </form>

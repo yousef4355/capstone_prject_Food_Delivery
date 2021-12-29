@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
@@ -14,23 +14,26 @@ import Login from "./routes/Login";
 import Order from "./routes/Order"
 import Restauants from "./routes/Restauants";
 import Menu from "./routes/Menu";
-
+import Home from './routes/Home'
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="expenses" element={<Expenses />} />
         <Route path="login" element={<Login />} />
+        <Route path="Home" element={<Home/>}/>
         <Route path="Order" element={<Order />} />
         <Route path="menu" element={<Menu />} />
         <Route path="invoices" element={<Invoices />}> 
         <Route path=":invoiceId" element={<Invoice />} />
+       
         `</Route>
         
         <Route path="Restauants" element={<Restauants />}/>
         <Route path="location" element={<Location />}/>
         <Route path="payment" element={<Payment />}/>
           <Route path="driver" element={<Driver/>}>
+            
         <Route
         index
         element={
