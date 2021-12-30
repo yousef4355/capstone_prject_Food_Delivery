@@ -25,7 +25,20 @@ public class UserServise {
     public Optional<User> getUser(Integer userId) {
         return userRepository.findById(userId);
 
-    }
+   }
+    public String getCheck(String username ,String password) {
+        if( userRepository.existsById(username)  ) {
+
+            String user = userRepository.findByUsername(username);
+            String password1= userRepository.findByPassword(password);
+            if (user.equals(password)) {
+                return "welcome you Authentication";
+            } else {
+                return " sorry not  Authentication";
+            }
+        }
+        return "sorry not  Authentication";
+   }
     public void addNewUser(User user) {
         userRepository.save(user);
     }

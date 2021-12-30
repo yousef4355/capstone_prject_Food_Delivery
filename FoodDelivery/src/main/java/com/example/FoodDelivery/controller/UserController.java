@@ -25,6 +25,7 @@ public class UserController {
 
     @GetMapping(path = "{userId}")
     public Optional<User> getUser(@PathVariable(name = "userId") Integer userId) {
+
         return userService.getUser(userId);
     }
 
@@ -35,7 +36,13 @@ public class UserController {
 
     @DeleteMapping(path = "delete/{userId}")
     public void deleteUser(@PathVariable ("userId") Integer userId){
+
         userService.deleteUser(userId);
+    }
+    @GetMapping(path = "login")
+    public String checkLogin(@RequestParam (name = "username") String username , @RequestParam (name = "password") String password ) {
+        return UserServise.getCheck(username,password);
+
     }
 
 }
