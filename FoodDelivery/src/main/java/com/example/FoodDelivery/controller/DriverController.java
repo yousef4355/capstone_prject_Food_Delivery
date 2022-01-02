@@ -33,6 +33,7 @@ public class DriverController {
     }
     @DeleteMapping(path = "delete/{driver_id}")
     public void deleteDriver(@PathVariable ("driver_id")Integer driver_id){
+
         driverService.deleteDriver(driver_id);
     }
 }

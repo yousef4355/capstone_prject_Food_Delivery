@@ -19,7 +19,7 @@ pasword:
 <input type="text"pasword="pass" /> 
 
 
-<input type="Submit" value="SignIn" />
+ <input type="Submit" value="SignIn"  />
 
 </form>
       <Link to="/login"><button>newUser</button></Link>

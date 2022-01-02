@@ -10,11 +10,13 @@ public class Restaurants {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int RestaurantsId;
     private String name;
+    private String image;
 
 
-    public Restaurants(int restaurantsId, String name) {
+    public Restaurants(int restaurantsId, String name, String image) {
         RestaurantsId = restaurantsId;
         this.name = name;
+        this.image = image;
     }
 
     public Restaurants() {
@@ -39,5 +41,13 @@ public class Restaurants {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

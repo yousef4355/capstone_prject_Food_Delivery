@@ -21,9 +21,11 @@ public class DriverServise {
 
    }
    public Optional<Driver> getDriver(Integer driver_id){
+
         return driverRepository.findById(driver_id);
    }
    public void addNewDriver(Driver driver){
+
         driverRepository.save(driver);
    }
     public  void deleteDriver(Integer driver_id){
