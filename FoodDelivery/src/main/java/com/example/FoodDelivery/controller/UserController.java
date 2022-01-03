@@ -39,10 +39,10 @@ public class UserController {
 
         userService.deleteUser(userId);
     }
-//    @GetMapping(path = "login")
-//    public String checkLogin(@RequestParam (name = "username") String username , @RequestParam (name = "password") String password ) {
-//        return UserServise.getCheck(username,password);
-//
-//    }
+    @GetMapping(path = "login")
+    public String checkLogin(@RequestParam (name = "name") String name , @RequestParam (name = "password") String password ) {
+        return UserServise.getCheck(name,password);
+
+    }
 
 }

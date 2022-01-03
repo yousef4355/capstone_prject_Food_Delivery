@@ -1,12 +1,6 @@
 package com.example.FoodDelivery.model.entities;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -16,11 +10,13 @@ public class Menu {
     private  int menu_id;
     private  String name;
     private String size;
+    private String picture;
 
-    public Menu(int menu_id, String name, String size) {
+    public Menu(int menu_id, String name, String size, String picture) {
         this.menu_id = menu_id;
         this.name = name;
         this.size = size;
+        this.picture = picture;
     }
 
     public Menu() {
@@ -48,5 +44,13 @@ public class Menu {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

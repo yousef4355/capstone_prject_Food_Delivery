@@ -26,19 +26,18 @@ public class UserServise {
         return userRepository.findById(userId);
 
    }
-//    public String getCheck(String username ,String password) {
-//        if( userRepository.existsById(username)  ) {
-//
-//            String user = userRepository.findByUsername(username);
-//            String password1= userRepository.findByPassword(password);
-//            if (user.equals(password)) {
-//                return "welcome you Authentication";
-//            } else {
-//                return " sorry not  Authentication";
-//            }
-//        }
-//        return "sorry not  Authentication";
-//   }
+    public String getCheck(String name ,String password) {
+        if( userRepository.existsByUsername(name) ){
+            String pass = userRepository.findPasswordByUsername(name);
+            if (pass.equals(password)){
+                return "authenticated" ;
+            }
+            else {
+                return "Password does not match"; }
+        }
+
+        return "Username not found";
+    }
     public void addNewUser(User user) {
         userRepository.save(user);
     }

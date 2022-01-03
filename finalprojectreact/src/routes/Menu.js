@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Invoice from './Service';
 import { Link } from "react-router-dom";
 import axios, { Axios } from 'axios';
+import "./Menu.css"
 // import Button from 'react-bootstrap/Button'
 export default class Menu extends Component {
     constructor(props){
@@ -24,9 +25,9 @@ export default class Menu extends Component {
     //     this.props.history.push("add");
     // }
     componentDidMount(){
-        Axios.get("api/MenuLIST").then(res=>{
+        axios.get("api/menu").then(res=>{
             const MenuList=res.data
-            this.setState({MenuList});
+            this.setState({MenuList:res.data});
         });
         console.log(this.state.MenuList)
 
@@ -47,10 +48,10 @@ export default class Menu extends Component {
                       <thead>
                           <tr>
                             <th  > id</th> 
-                                    <th> type</th> 
-                                    <th>time</th> 
-                                    <th>location</th>
-                                    <th>Image</th>
+                                    <th> id</th> 
+                                    <th>name</th> 
+                                    <th>size</th>
+                                    <th>picture</th>
 
                             </tr>
                    
@@ -59,11 +60,13 @@ export default class Menu extends Component {
                                 {
                                     this.state.MenuList.map((
                                         item =>(
-                                        <tr key = {item.order_id}>
-                                             <td> { item.type} </td>
-                                             <img ></img>
-                                             
-                                             <td>{item.time} </td>
+                                        <tr key = {item.menu_id}>
+                                             <td> { item.menu_id} </td>
+                                             <td>{item.name}</td>
+                                             <td>{item.size} </td>
+                                             <td>
+                                             <img src={item.picture} alt="no burger"></img>
+                                             </td>
                                              {/* <img src={item.image}></img> */}
                                              <td>{item.location}</td>
                                         </tr>
