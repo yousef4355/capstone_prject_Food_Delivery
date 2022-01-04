@@ -19,7 +19,7 @@ function handlePassword(event){
     setPassword((password = event.target.value))
 }
 
-let newUser = {"name": name, "email" :email ,"password":password}
+let newUser = {"username": name, "email" :email ,"password":password}
 
 
 function handleSubmit(event){

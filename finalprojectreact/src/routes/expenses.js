@@ -18,10 +18,11 @@ export default function Expenses() {
     axios({
       method:"get",
       url:"api/users/login",
-      params:{name:name,password:password}
+      params:{username:name,password:password}
 
     })
-    .then((res =>{setSing(res.data)}))
+    .then((res =>{window.alert(res.data)}))
+    
   }
 
     return (
@@ -35,11 +36,11 @@ export default function Expenses() {
           <label>
 fristName:
 </label>
-<input type="text"Name="name" value={name} onChange={handleName} />
+<input type="text"Name="username" value={name} onChange={handleName} />
 <label>
 pasword:
 </label>
-<input type="text"pasword="pass" value={password} onChange={handlePassword}/> 
+<input type="text"pasword="password" value={password} onChange={handlePassword}/> 
 
 
  <input type="Submit" value="SignIn"  />

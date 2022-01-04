@@ -26,9 +26,9 @@ public class UserServise {
         return userRepository.findById(userId);
 
    }
-    public String getCheck(String name ,String password) {
-        if( userRepository.existsByUsername(name) ){
-            String pass = userRepository.findPasswordByUsername(name);
+    public  String getCheck(String username, String password) {
+        if( userRepository.existsByUsername(username) ){
+            String pass = userRepository.findPasswordByUsername(username);
             if (pass.equals(password)){
                 return "authenticated" ;
             }

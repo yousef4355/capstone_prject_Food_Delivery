@@ -5,13 +5,17 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+@Repository
 public interface UserRepository  extends JpaRepository<User, Integer> {
 
-@Query("SELECT password FROM User WHERE name = :name" )
-    String findPasswordByUsername(@Param("name") String name);
 
-@Query("select case when count(name) > 0 then true else false end from User where name = :name")
-    Boolean existsByUsername(@Param("name") String name);
+
+@Query("SELECT password FROM User WHERE username = :username" )
+    String findPasswordByUsername(@Param("username") String username);
+
+@Query("select case when count(username) > 0 then true else false end from User where username = :username")
+    Boolean existsByUsername(@Param("username") String username);
 
 
 //    @Query ("SELECT password FROM User WHERE password = :password")

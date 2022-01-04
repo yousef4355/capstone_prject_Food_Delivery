@@ -40,8 +40,9 @@ public class UserController {
         userService.deleteUser(userId);
     }
     @GetMapping(path = "login")
-    public String checkLogin(@RequestParam (name = "name") String name , @RequestParam (name = "password") String password ) {
-        return UserServise.getCheck(name,password);
+    public String checkLogin(@RequestParam (name = "username") String username ,
+                             @RequestParam (name = "password") String password ) {
+        return userService.getCheck(username,password);
 
     }
 
