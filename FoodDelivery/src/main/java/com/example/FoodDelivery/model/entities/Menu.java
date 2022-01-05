@@ -11,12 +11,16 @@ public class Menu {
     private  String name;
     private String size;
     private String picture;
+@ManyToOne
+@JoinColumn(name = "restaurants", referencedColumnName = "RestaurantsId")
+private Restaurants restaurants;
 
-    public Menu(int menu_id, String name, String size, String picture) {
+    public Menu(int menu_id, String name, String size, String picture, Restaurants restaurants) {
         this.menu_id = menu_id;
         this.name = name;
         this.size = size;
         this.picture = picture;
+        this.restaurants = restaurants;
     }
 
     public Menu() {
@@ -52,5 +56,13 @@ public class Menu {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Restaurants getRestaurants() {
+        return restaurants;
+    }
+
+    public void setRestaurants(Restaurants restaurants) {
+        this.restaurants = restaurants;
     }
 }

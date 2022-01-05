@@ -12,7 +12,7 @@ public class Orders {
      private String type;
      private String time;
      private  String location;
-
+//menu
     @ManyToOne
     @JoinColumn(name = "userId",referencedColumnName="id")
     private User user;

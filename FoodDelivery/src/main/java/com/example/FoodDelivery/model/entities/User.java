@@ -17,6 +17,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    //resr
     @OneToMany(mappedBy ="user")
     @JsonIgnore
     private List<Orders> items = new ArrayList<>();

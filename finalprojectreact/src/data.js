@@ -1,14 +1,17 @@
 import  React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
+let resturaunt=[];
 
+  axios.get("/api/restauants")
+  .then(response=>{
+    resturaunt=response.data
+    console.log(response.data)
+ })
 
 let invoices = [
-//   axios.get("/api/restauants")
-//   .then(response=>{
-//     console.log(response.data)
-//     setMyRestauants(response.data[1])
-//  }),
+
     {
       id:1,
       name: "pizze",
@@ -46,10 +49,10 @@ let invoices = [
   ];
   
   export function getInvoices() {
-    return invoices;
+    return resturaunt;
   }
   export function getInvoice(number) {
-    return invoices.find(
-      invoice => invoice.number === number
+    return resturaunt.find(
+      invoice => invoice.restaurantsId === number
     );
   }

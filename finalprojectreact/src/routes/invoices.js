@@ -35,16 +35,21 @@ export default function Invoices() {
               return name.startsWith(filter.toLowerCase());
             })
             .map(invoice => (
+              
               <NavLink
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
                   color: isActive ? "green" : ""
                 })}
-                to={`/invoices/${invoice.number}`}
-                key={invoice.number}
+                to={`/invoices/${invoice.restaurantsId}`}
+                key={invoice.restaurantsId}
               >
+                
+                {console.log(invoice)}
+                <img src={invoice.image}></img>
                 {invoice.name}
+                
               </NavLink>
             ))}
         </nav>

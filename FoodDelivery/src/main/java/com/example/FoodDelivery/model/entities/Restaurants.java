@@ -1,6 +1,9 @@
 package com.example.FoodDelivery.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +14,9 @@ public class Restaurants {
     private int RestaurantsId;
     private String name;
     private String image;
-
+@OneToMany(mappedBy = "restaurants")
+@JsonIgnore
+private List<Menu>items = new ArrayList<>();
 
     public Restaurants(int restaurantsId, String name, String image) {
         RestaurantsId = restaurantsId;
