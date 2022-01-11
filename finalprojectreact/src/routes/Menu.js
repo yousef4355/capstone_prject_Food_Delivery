@@ -24,6 +24,7 @@ export default class Menu extends Component {
     // addMenu=()=>{
     //     this.props.history.push("add");
     // }
+    //axios
     componentDidMount(){
         axios.get("api/menu").then(res=>{
             const MenuList=res.data
