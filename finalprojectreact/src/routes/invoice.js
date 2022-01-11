@@ -9,47 +9,56 @@ export default function Invoice() {
   let [menuState,setMenuState]=useState("")
   let menuM
   // console.log(invoice)
-  axios.get("/api/menu")
-  .then(response=>{
-    menuM=response.data
-    console.log(menuM[1].size)
-  
+  function useIt(){
+  useEffect(() => {
+    axios.get("/api/menu")
+    .then(response=>{
+      menuM=response.data
+      console.log(menuM)
+  }, [])
  
-  })
-  for (let i; i<menuM.length-1;i++){
-    if(menuM[i].restaurantsId==params){
-      return(  <div className="row">
-      <table className='table table-striped table-bordered'>
-        <thead>
-            <tr>
-              <th  > id</th> 
-                      <th> id</th> 
-                      <th>name</th> 
-                      <th>size</th>
-                      <th>picture</th>
+  })}
+  // function yousefrender(){
+  // for (let i; i<menuM.length-1;i++){
+  //   if(menuM[i].restaurantsId==params){
+  //     return( 
+  //        <div className="row">
+  //              <table className='table table-striped table-bordered'>
+  //                  <thead>
+  //                      <tr>
+  //                        <th  > id</th> 
+  //                         <th> id</th> 
+  //                         <th>name</th> 
+  //                         <th>size</th>
+  //                         <th>picture</th>
     
-              </tr>
+  //                     </tr>
      
-          </thead>
-          <tbody>
-                  {
-                      this.state.MenuList.map((
-                          item =>(
-                          <tr key = {item.menu_id}>
-                               <td> { item.menu_id} </td>
-                               <td>{item.name}</td>
-                               <td>{item.size} </td>
-                               <td>
-                               <img src={item.picture} alt="no burger"></img>
-                               </td>
-                          </tr>
-                      )))
-                  }
-              </tbody>
-      </table>
-    </div>)
-    }
-  }
+  //                   </thead>
+  //                   <tbody>
+  //                    {
+  //                          this.state.MenuList.map((
+  //                            item =>(
+  //                               <tr key = {item.menu_id}>
+  //                                  <td> { item.menu_id} </td>
+  //                                  <td>{item.name}</td>
+  //                                  <td>{item.size} </td>
+  //                                  <td>
+  //                                  <img src={item.picture} alt="no burger"></img>
+  //                                  </td>
+  //                                </tr>
+  //                                    )
+  //                                                   ))
+  //                      }
+  //                    </tbody>
+  //                </table>
+  //          </div>
+  //            )
+  //   }
+  // }}
+  // useIt(yousefrender())
+  // setTimeout(yousefrender,3000)
+  
 
 // console.log(menuState[0].name)
 
@@ -58,8 +67,10 @@ export default function Invoice() {
     
     <main style={{ padding: "1rem" }}>
 {/* <p> {invoice.restaurunts}</p>    */}
-<p> {invoice.name}</p>    
-<img src={invoice.image}></img>
+<p> {invoice.menu[0].name}</p>    
+<img src={invoice.menu[0].picture}></img>
+<p>{invoice.menu[0].size}</p>
+
 
  
 

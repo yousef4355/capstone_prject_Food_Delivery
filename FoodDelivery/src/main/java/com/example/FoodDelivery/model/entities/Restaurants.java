@@ -14,14 +14,20 @@ public class Restaurants {
     private int RestaurantsId;
     private String name;
     private String image;
-@OneToMany(mappedBy = "restaurants")
-@JsonIgnore
-private List<Menu>items = new ArrayList<>();
+//@OneToMany(mappedBy = "restaurants")
+//@JsonIgnore
+//private List<Menu>items = new ArrayList<>();
+@ManyToMany
+@JoinTable(name="restaurants_manu",
+          joinColumns=@JoinColumn(name ="RestaurantsId"),
+          inverseJoinColumns=@JoinColumn(name="menu_id"))
+private List<Menu>menu;
 
-    public Restaurants(int restaurantsId, String name, String image) {
+    public Restaurants(int restaurantsId, String name, String image, List<Menu> menu) {
         RestaurantsId = restaurantsId;
         this.name = name;
         this.image = image;
+        this.menu = menu;
     }
 
     public Restaurants() {
@@ -54,5 +60,13 @@ private List<Menu>items = new ArrayList<>();
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<Menu> getMenu() {
+        return menu;
+    }
+
+    public void setMenu(List<Menu> menu) {
+        this.menu = menu;
     }
 }

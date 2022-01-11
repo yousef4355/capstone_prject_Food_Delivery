@@ -1,6 +1,10 @@
 package com.example.FoodDelivery.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -10,6 +14,10 @@ public class Driver {
     private int drive_id;
     private String phone_numbere;
     private  String name;
+    //call orders table
+    @OneToMany(mappedBy = "driver")
+    @JsonIgnore
+    private List<Orders>items =new ArrayList<>();
 
     public Driver(int drive_id, String phone_numbere, String name) {
         this.drive_id = drive_id;

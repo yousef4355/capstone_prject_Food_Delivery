@@ -11,20 +11,10 @@ export default class Menu extends Component {
             MenuList:[],
         };
     }
-    deleteSpecialist(ORDER_id){
-        axios.delete('api/Orders/delete/{ORDER_id}')
-        .then(res=>{
-            const MenuList=
-            this.state.MenuList.filter(item =>
-                item.ORDER_id!==ORDER_id);
-            this.setState({MenuList})
-        })
-       
-    }
+  
     // addMenu=()=>{
     //     this.props.history.push("add");
     // }
-    //axios
     componentDidMount(){
         axios.get("api/menu").then(res=>{
             const MenuList=res.data
@@ -32,6 +22,14 @@ export default class Menu extends Component {
         });
         console.log(this.state.MenuList)
 
+    }
+    deleteSpecialist(menu_id){
+        axios.delete(`api/menu/delete/${menu_id}`)
+        .then(res=>{
+            const MenuList= this.state.MenuList.filter(item => item.menu_id !==menu_id);
+            this.setState({MenuList})
+        })
+       //////
     }
     render() {
         console.log(this.state.menu)
@@ -70,7 +68,9 @@ export default class Menu extends Component {
                                              </td>
                                              {/* <img src={item.image}></img> */}
                                              <td>{item.location}</td>
+                                             <td><button onClick={(e)=> this.deleteSpecialist(item.menu_id,e)}>delete</button></td>
                                         </tr>
+
                                     )))
                                 }
                             </tbody>

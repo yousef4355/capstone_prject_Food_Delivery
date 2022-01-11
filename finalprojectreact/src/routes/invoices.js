@@ -40,7 +40,7 @@ export default function Invoices() {
                 style={({ isActive }) => ({
                   display: "block",
                   margin: "1rem 0",
-                  color: isActive ? "green" : ""
+                  color: isActive ? "yellow" : ""
                 })}
                 to={`/invoices/${invoice.restaurantsId}`}
                 key={invoice.restaurantsId}

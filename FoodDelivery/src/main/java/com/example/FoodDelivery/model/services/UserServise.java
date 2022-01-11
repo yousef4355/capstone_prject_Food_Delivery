@@ -39,6 +39,7 @@ public class UserServise {
         return "Username not found";
     }
     public void addNewUser(User user) {
+
         userRepository.save(user);
     }
 
@@ -48,4 +49,3 @@ public class UserServise {
         // put a condition on 'exist'. if exist then delete
     }
 }
-

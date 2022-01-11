@@ -1,6 +1,10 @@
 package com.example.FoodDelivery.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -11,16 +15,24 @@ public class Menu {
     private  String name;
     private String size;
     private String picture;
+    //call user table
+//@ManyToOne
+//@JoinColumn(name = "restaurants", referencedColumnName = "RestaurantsId")
+//private Restaurants restaurants;
+    @ManyToMany(mappedBy = "menu")
+    @JsonIgnore
+    private List<Restaurants>restaurants = new ArrayList<>();
+//call orders table
 @ManyToOne
-@JoinColumn(name = "restaurants", referencedColumnName = "RestaurantsId")
-private Restaurants restaurants;
+@JoinColumn(name ="orders",referencedColumnName = "ORDER_id")
+private Orders orders;
 
-    public Menu(int menu_id, String name, String size, String picture, Restaurants restaurants) {
+    public Menu(int menu_id, String name, String size, String picture , Orders orders) {
         this.menu_id = menu_id;
         this.name = name;
         this.size = size;
         this.picture = picture;
-        this.restaurants = restaurants;
+        this.orders = orders;
     }
 
     public Menu() {
@@ -58,11 +70,11 @@ private Restaurants restaurants;
         this.picture = picture;
     }
 
-    public Restaurants getRestaurants() {
-        return restaurants;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setRestaurants(Restaurants restaurants) {
-        this.restaurants = restaurants;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 }
