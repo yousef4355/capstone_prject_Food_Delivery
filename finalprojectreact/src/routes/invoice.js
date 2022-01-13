@@ -67,9 +67,9 @@ export default function Invoice() {
     
     <main style={{ padding: "1rem" }}>
 {/* <p> {invoice.restaurunts}</p>    */}
-<p> {invoice.menu[0].name}</p>    
+<h1> {invoice.menu[0].name}</h1>    
 <img src={invoice.menu[0].picture}></img>
-<p>{invoice.menu[0].size}</p>
+<h1>{invoice.menu[0].size}</h1>
 
 
  

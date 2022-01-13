@@ -16,17 +16,17 @@ export default class Menu extends Component {
     //     this.props.history.push("add");
     // }
     componentDidMount(){
-        axios.get("api/menu").then(res=>{
-            const MenuList=res.data
-            this.setState({MenuList:res.data});
+        axios.get("api/menu").then(response=>{
+            const MenuList=response.data
+            this.setState({MenuList:response.data});
         });
         console.log(this.state.MenuList)
 
     }
     deleteSpecialist(menu_id){
-        axios.delete(`api/menu/delete/${menu_id}`)
-        .then(res=>{
-            const MenuList= this.state.MenuList.filter(item => item.menu_id !==menu_id);
+        axios.delete(`/api/menu/delete/${menu_id}`)
+        .then(response=>{
+            const MenuList= this.state.MenuList.filter(item => item.Menu_id !==menu_id);
             this.setState({MenuList})
         })
        //////

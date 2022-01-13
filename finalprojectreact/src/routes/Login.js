@@ -63,9 +63,11 @@ function handleDelete() {
 
     value={}
     <input type="submit" value="submit"/>
+    
     {/* <button onClick={handleDelete}>delete customer</button> */}
+   
     </form>
-      
+     
         </div>
     )
 }

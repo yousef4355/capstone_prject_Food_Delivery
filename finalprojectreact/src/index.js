@@ -18,9 +18,11 @@ import Home from './routes/Home'
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="expenses" element={<Expenses />} />
-        <Route path="login" element={<Login />} />
+    <Route path="login" element={<Login />} />
+
+      <Route path="/" element={<Expenses/>}>
+      <Route path="/home" element={<App />}>
+        
         <Route path="Home" element={<Home/>}/>
         <Route path="Order" element={<Order />} />
         <Route path="menu" element={<Menu />} />
@@ -52,6 +54,7 @@ ReactDOM.render(
             </main>
           }
         />
+      </Route>
       </Route>
     </Routes>
   </BrowserRouter>,

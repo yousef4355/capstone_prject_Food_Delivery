@@ -13,14 +13,14 @@ import "./routes/barger.css"
         }}
       >
         <Link to="/Home" ><button className="button"style={{background: "#FFCC00", color: "#000000" }}>Home</button></Link>|{" "}
-        <Link to="/invoices"style={{background: "#FFCC00", color: "#000000" }}>قائمة الطعام</Link> |{" "}
-        <Link to="/expenses">الدخول</Link> |{" "}
-        <Link to="/menu">Menu</Link> |{" "}
-        <Link to="/payment"> payment</Link>|{" "}
-        <Link to="/Login"> login</Link>|{" "}
-        <Link to="/Order"> Order</Link>|{" "}
-        <Link to="/driver"> driver</Link>|{" "}
-        <Link to="/restauants">restauants</Link>
+        <Link to="/invoices"> <button  className="button"style={{background: "#FFCC00", color: "#000000" }}> قائمة الطعام</button></Link> |{" "}
+        <Link to="/expenses"><button className="button"style={{background: "#FFCC00", color: "#000000" }}> الدخول</button></Link> |{" "}
+        <Link to="/menu"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>menu</button></Link> |{" "}
+        <Link to="/payment"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>payment</button></Link>|{" "}
+        <Link to="/Login"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>logint</button></Link>|{" "}
+        <Link to="/Order"><button className="button"style={{background: "#FFCC00", color: "#000000" }}> Order</button></Link>|{" "}
+        <Link to="/driver"><button className="button"style={{background: "#FFCC00", color: "#000000" }}> driver</button></Link>|{" "}
+        <Link to="/restauants"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>restauants</button></Link>
 
       </nav>
       <Outlet/>

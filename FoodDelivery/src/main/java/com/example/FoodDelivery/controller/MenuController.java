@@ -29,7 +29,7 @@ public class MenuController {
         menuServise.addNewMenu(menu);
     }
     ////
-    @DeleteMapping(path = "delete/{menu_id}")
+    @DeleteMapping(path = "delete/{Menu_id}")
     public void deleteMENU(@PathVariable("Menu_id")Integer menu_id){
         menuServise.deleteMenu(menu_id);
     }
