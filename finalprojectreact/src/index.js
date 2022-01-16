@@ -18,18 +18,18 @@ import Home from './routes/Home'
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-    <Route path="login" element={<Login />} />
+      <Route path="/" element={<App />}>
+      <Route path="login" element={<Login />} />
 
-      <Route path="/" element={<Expenses/>}>
-      <Route path="/home" element={<App />}>
-        
+<Route path="/expenses" element={<Expenses/>}/>
+
         <Route path="Home" element={<Home/>}/>
         <Route path="Order" element={<Order />} />
         <Route path="menu" element={<Menu />} />
         <Route path="invoices" element={<Invoices />}> 
         <Route path=":invoiceId" element={<Invoice />} />
        
-        `</Route>
+        </Route>
         
         <Route path="Restauants" element={<Restauants />}/>
         <Route path="location" element={<Location />}/>
@@ -54,7 +54,6 @@ ReactDOM.render(
             </main>
           }
         />
-      </Route>
       </Route>
     </Routes>
   </BrowserRouter>,

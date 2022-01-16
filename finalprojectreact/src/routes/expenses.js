@@ -42,11 +42,13 @@ pasword:
 </label>
 <input type="text"pasword="password" value={password} onChange={handlePassword}/> 
 
-
+<Link to="/App">
  <input type="Submit" value="SignIn"  />
-
+ </Link>
 </form>
       <Link to="/login"><button>newUser</button></Link>
+    <button>continue to home</button>
+
   </div>
     );
   }
