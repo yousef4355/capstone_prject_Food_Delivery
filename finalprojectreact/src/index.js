@@ -15,6 +15,7 @@ import Order from "./routes/Order"
 import Restauants from "./routes/Restauants";
 import Menu from "./routes/Menu";
 import Home from './routes/Home'
+import Restaurantbill from "./routes/Restaurantbill"
 ReactDOM.render(
   <BrowserRouter>
     <Routes>

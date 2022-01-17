@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./routes/barger.css"
+
  function App() {
   return (
     
@@ -20,8 +21,9 @@ import "./routes/barger.css"
         <Link to="/Login"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>logint</button></Link>|{" "}
         <Link to="Order"><button className="button"style={{background: "#FFCC00", color: "#000000" }}> Order</button></Link>|{" "}
         <Link to="driver"><button className="button"style={{background: "#FFCC00", color: "#000000" }}> driver</button></Link>|{" "}
-        <Link to="restauants"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>restauants</button></Link>
-
+        <Link to="restauants"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>restauants</button></Link> |{" "}
+        <Link to="restauantbill"><button className="button"style={{background: "#FFCC00", color: "#000000" }}>Restaurantbill</button></Link>
+        
       </nav>
       <Outlet/>
     </div>
