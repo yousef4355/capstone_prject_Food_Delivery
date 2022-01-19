@@ -16,12 +16,12 @@ public class UserServise {
     public void UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
+//
     public List<User> getUser() {
         return userRepository.findAll();
 
     }
-
+/* */
     public Optional<User> getUser(Integer userId) {
         return userRepository.findById(userId);
 
